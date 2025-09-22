@@ -6,6 +6,7 @@ function database_connection() {
     return $pdo;
 
 }
+
 // function to get the list of interns from the database
 function liste_stagiares() {
 
@@ -35,7 +36,7 @@ function edit($Id, $Nom, $Prénom, $Age, $Login, $Password) {
 
 }
 
-function delete($id) {
+function destroy($id) {
     $pdo = database_connection();
     $sqlState = $pdo->prepare('DELETE FROM stagiare WHERE Id = ?'); // Prepare an SQL statement to delete an intern from the 'stagiare' table based on the provided ID
     return $sqlState->execute([$id]);

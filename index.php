@@ -1,12 +1,29 @@
 <?php
-require_once 'controller/stagiaire_controller.php'; // Include the controller file to handle the request
-listeStagiaireAction(); // Call the list action to display all interns
-
-
-$conn = new mysqli("localhost", "root", "", "ofppt");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+require_once 'controller/stagiaire_controller.php';
+// Création d'un routeur.
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+    switch ($action) {
+        case 'create':
+            createAction();
+            break;
+        case 'list':
+            listeStagiaireAction();
+            break;
+        case 'destroy':
+            destroyAction();
+            break;
+        case 'edit':
+            editAction();
+            break;
+        case 'store':
+            storeAction();
+            break;
+        case 'update':
+            updateAction();
+            break;
+        case 'delete':
+            deleteAction();
+            break;
+    }
 }
-echo "Connected successfully";
-?>

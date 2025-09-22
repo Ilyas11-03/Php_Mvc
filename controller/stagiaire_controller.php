@@ -15,8 +15,9 @@ function createAction() {
 }
 
 function storeAction() {
+
     create(); // call the create function from the model to insert a new intern into the database
-    header('location:index.php'); // redirect to the index page after storing the new intern
+    header('location:index.php?action=list'); // redirect to the index page after storing the new intern
     
 }
 
@@ -40,7 +41,6 @@ function deleteAction() {
 }
 
 function destroyAction() {
-    $id = $_GET['id'];
-    delete($id); // Call the delete function from the model to remove the intern from the database
-    header('location:index.php'); // Redirect to the index page after deletion
+    destroy($_GET['id']); // Call the delete function from the model to delete the intern from the database
+    header('location:index.php?action=list'); // Redirect to the index page after deletion
 }
