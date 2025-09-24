@@ -3,7 +3,7 @@ $title = "Ajouter un stagiaire";
 ob_start(); 
 ?>
 
-<form action="store.php" method="post">
+<form action="index.php?action=store" method="post">
 
     <div class="form-group">
         <label>Nom</label>

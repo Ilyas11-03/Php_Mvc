@@ -34,3 +34,4 @@ ob_start();
     </table>
 <?php $content = ob_get_clean(); ?>
 <?php include_once 'views/layout.php'; ?>
+
